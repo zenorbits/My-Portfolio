@@ -1,0 +1,22 @@
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Navbar from './components/Navbar'
+
+const App = () => {
+  return (
+    <div className='font-mono'>
+      {/* Navbar always visible */}
+      <Navbar />
+
+      {/* Routes for pages */}
+      <div className=" ">
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+      </div>
+    </div>
+  )
+}
+
+export default App
