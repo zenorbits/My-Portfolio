@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 const Home = () => {
   return (
-    <div className="main h-screen w-full font-mono text-white bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a]">
+    <div className="main min-h-screen w-full font-mono text-white bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a]">
       {/* Navbar fixed at top */}
 
 

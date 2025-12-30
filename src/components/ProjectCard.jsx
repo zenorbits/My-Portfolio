@@ -1,14 +1,39 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import React from "react";
 import { FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb, SiTailwindcss } from "react-icons/si";
 
-const ProjectCard = ({ title, category, description, link, status }) => {
+const ProjectCard = ({ title, category, description, link, status, position }) => {
+
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+
+    gsap.fromTo('.row1left',
+      { y: 100, opacity: 0 },
+      {
+        y: 0, opacity: 1,
+        scrollTrigger: {
+          trigger: '.row1left',
+          start: 'top 60%',   // starts earlier (higher up)
+          end: 'top 40%',     // ends earlier too
+          scrub: true,
+          markers: true
+        }
+      }
+    );
+
+  })
+
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full md:w-[48%] group"
+      className={`w-full md:w-[48%] group ${position}`}
     >
       <div
         className="border border-gray-700 rounded-2xl p-6 flex flex-col justify-between 
@@ -25,11 +50,10 @@ const ProjectCard = ({ title, category, description, link, status }) => {
           <div className="flex justify-between items-center text-sm">
             <span className="text-gray-400">{category}</span>
             <span
-              className={`px-2 py-0.5 rounded-full text-xs ${
-                status === "Completed"
-                  ? "bg-green-600/20 text-green-400"
-                  : "bg-yellow-600/20 text-yellow-400"
-              }`}
+              className={`px-2 py-0.5 rounded-full text-xs ${status === "Completed"
+                ? "bg-green-600/20 text-green-400"
+                : "bg-yellow-600/20 text-yellow-400"
+                }`}
             >
               {status}
             </span>
