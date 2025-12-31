@@ -5,35 +5,15 @@ import React from "react";
 import { FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb, SiTailwindcss } from "react-icons/si";
 
-const ProjectCard = ({ title, category, description, link, status, position }) => {
+const ProjectCard = ({ title, category, description, link, status,className}) => {
 
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useGSAP(() => {
-
-    gsap.fromTo('.row1left',
-      { y: 100, opacity: 0 },
-      {
-        y: 0, opacity: 1,
-        scrollTrigger: {
-          trigger: '.row1left',
-          start: 'top 60%',   // starts earlier (higher up)
-          end: 'top 40%',     // ends earlier too
-          scrub: true,
-          markers: true
-        }
-      }
-    );
-
-  })
 
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`w-full md:w-[48%] group ${position}`}
+      className={`w-full md:w-[48%] group ${className}`}
     >
       <div
         className="border border-gray-700 rounded-2xl p-6 flex flex-col justify-between 
