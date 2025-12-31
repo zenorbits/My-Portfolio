@@ -82,10 +82,46 @@ const Footer = () => {
         <div ref={linksRef} className="flex flex-col gap-3 md:w-1/3">
           <h3 className="text-white font-semibold text-lg">Quick Links</h3>
           <ul className="flex flex-col gap-2 text-sm">
-            <li><a href="#projects" className="hover:text-indigo-400 transition">Projects</a></li>
-            <li><a href="#services" className="hover:text-indigo-400 transition">Services</a></li>
-            <li><a href="#whychooseus" className="hover:text-indigo-400 transition">Why Choose Us</a></li>
-            <li><a href="#contact" className="hover:text-indigo-400 transition">Contact</a></li>
+            <li><a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                window.lenis.scrollTo("#projects", {
+                  offset: -50, // adjust for header height
+                  duration: 1.6,
+                  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+              }}
+              className="hover:text-indigo-400 transition"
+            >
+              Projects
+            </a></li>
+            <li><a
+              href="#services"
+              className="hover:text-indigo-400 transition"
+              onClick={(e) => {
+                e.preventDefault();
+                window.lenis.scrollTo("#services", {
+                  offset: -50, // adjust for header height
+                  duration: 1.6,
+                  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+              }}
+            >Services
+            </a></li>
+            <li><a
+              href="#whychooseus"
+              className="hover:text-indigo-400 transition"
+              onClick={(e) => {
+                e.preventDefault();
+                window.lenis.scrollTo("#whychoseus", {
+                  offset: -50, // adjust for header height
+                  duration: 1.6,
+                  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+              }}
+            >Why Choose Us
+            </a></li>
           </ul>
         </div>
 

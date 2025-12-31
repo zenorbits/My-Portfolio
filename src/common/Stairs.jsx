@@ -1,14 +1,18 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Stairs = ({ children }) => {
   const stairAnimate = useRef(null);
   const appRef = useRef(null);
-  const tlRef = useRef(null); 
+  const tlRef = useRef(null);
   const routeLocation = useLocation().pathname;
 
+  // Pointer reference
+  const pointerRef = useRef(null);
+
+  // GSAP stair animation
   useGSAP(() => {
     if (tlRef.current) {
       tlRef.current.kill();
@@ -18,22 +22,22 @@ const Stairs = ({ children }) => {
     gsap.killTweensOf(".stair-text");
     gsap.killTweensOf(appRef.current);
 
-    // Faster defaults: shorter duration
     const tl = gsap.timeline({
-      defaults: { ease: "power4.inOut", duration: 0.5 } // was 0.8
+      defaults: { ease: "power4.inOut", duration: 0.5 }
     });
     tlRef.current = tl;
 
+    // Hide pointer at start
+    gsap.set(pointerRef.current, { autoAlpha: 0 });
+
     tl.set(stairAnimate.current, { autoAlpha: 1 });
 
-    // Faster stagger
     tl.fromTo(".stair", { height: 0 }, { height: "100%", stagger: 0.07 });
-
     tl.fromTo(
       ".stair-text",
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, stagger: 0.07 },
-      "-=0.4" // overlap slightly
+      "-=0.4"
     );
 
     tl.to(".stair", { y: "100%", stagger: 0.07 });
@@ -46,18 +50,53 @@ const Stairs = ({ children }) => {
       gsap.set(".stair-text", { opacity: 0, y: 0 });
     });
 
-    // Faster app content fade-in
     tl.from(appRef.current, {
       opacity: 0,
-      y: 20, // smaller movement for snappier feel
-      duration: 0.8 // was 1
-    }, "-=1"); // overlap earlier
+      y: 20,
+      duration: 0.8
+    }, "-=1");
+
+    // Fade in pointer AFTER transition is done
+    tl.to(pointerRef.current, { autoAlpha: 1, duration: 0.5 }, "-=0.2");
   }, [routeLocation]);
+
+  // Pointer animation
+  useEffect(() => {
+    if (!pointerRef.current) return;
+
+    const xTo = gsap.quickTo(pointerRef.current, "x", {
+      duration: 0.8,
+      ease: "back.out(1.4)"
+    });
+    const yTo = gsap.quickTo(pointerRef.current, "y", {
+      duration: 0.8,
+      ease: "back.out(1.4)"
+    });
+
+    const movePointer = (e) => {
+      xTo(e.clientX - pointerRef.current.offsetWidth / 2);
+      yTo(e.clientY - pointerRef.current.offsetHeight / 2);
+    };
+
+    window.addEventListener("mousemove", movePointer);
+
+    return () => {
+      window.removeEventListener("mousemove", movePointer);
+    };
+  }, []);
 
   return (
     <div className="bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] min-h-screen">
+      {/* Pointer (hidden until transition ends) */}
       <div
-        className="transition-anim fixed inset-0 z-50 w-screen h-screen flex pointer-events-none text-white"
+        ref={pointerRef}
+        className="pointer fixed h-6 w-6 rounded-full bg-white z-50 pointer-events-none"
+        style={{ transform: "translate(0px, 0px)" }}
+      ></div>
+
+      {/* Stair transition overlay */}
+      <div
+        className="transition-anim fixed inset-0 z-40 w-screen h-screen flex pointer-events-none text-white"
         ref={stairAnimate}
       >
         {["D", "E", "V", "O", "R", "B", "I", "T", "S"].map((letter, i) => (
@@ -72,6 +111,7 @@ const Stairs = ({ children }) => {
         ))}
       </div>
 
+      {/* App content */}
       <div ref={appRef}>
         {children}
       </div>

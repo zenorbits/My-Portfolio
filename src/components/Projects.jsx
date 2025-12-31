@@ -52,7 +52,7 @@ const Projects = () => {
     }, { scope: sectionRef });
     return (
         <section ref={sectionRef} className="w-full">
-            <div className="text-white px-4 sm:px-6 md:px-10 py-10 w-full mt-8 md:mt-6 lg:mt-4">
+            <div className="text-white px-4 sm:px-6 md:px-10 py-10 w-full mt-8 md:mt-6 lg:mt-4" id='projects'>
                 {/* Heading */}
                 <div
                     className="heading mb-8 text-center md:text-left w-full flex items-center justify-center"

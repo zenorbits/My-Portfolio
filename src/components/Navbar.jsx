@@ -16,7 +16,7 @@ const Navbar = () => {
           flex items-center px-6 md:px-16 justify-between"
             >
                 {/* Logo + Name */}
-                <Link to='/`'>
+                <Link to='/'>
                 <div className="logo-name flex items-center gap-3 md:gap-4">
                     <img src={Penguin} alt="logo" className="h-10 md:h-14 drop-shadow-md" />
                     <span className="text-xl md:text-3xl font-extrabold tracking-wide text-gray-200 text-indigo-400">

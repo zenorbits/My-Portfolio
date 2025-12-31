@@ -90,6 +90,7 @@ const WhyChooseUs = () => {
     <section
       ref={sectionRef}
       className="whychooseus-cont bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] py-20 px-10"
+      id="whychoseus"
     >
       {/* Title */}
       <div className="title mb-16 text-center" ref={titleRef}>
