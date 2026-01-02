@@ -129,28 +129,28 @@ const Footer = () => {
         <div ref={socialsRef} className="flex flex-col gap-3 md:w-1/3">
           <h3 className="text-white font-semibold text-lg">Connect</h3>
           <div className="flex flex-wrap gap-4">
-            <a href="https://github.com/pathaksanchit25-coder" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/zenorbits" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-between w-40 px-4 py-3 rounded-xl 
                           bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                           hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-lg">
               <FaGithub size={22} />
               <span>GitHub</span>
             </a>
-            <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/zen_orbits/" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-between w-40 px-4 py-3 rounded-xl 
                           bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                           hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-lg">
               <FaInstagram size={22} />
               <span>Instagram</span>
             </a>
-            <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
+            <a href="https://youtube.com/@ZenOrbits-u2z" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-between w-40 px-4 py-3 rounded-xl 
                           bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                           hover:bg-red-600 hover:text-white transition-all duration-300 shadow-lg">
               <FaYoutube size={22} />
               <span>YouTube</span>
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/sanchit-pathak-5a19b13a2/" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-between w-40 px-4 py-3 rounded-xl 
                           bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                           hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg">
