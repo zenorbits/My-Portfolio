@@ -78,7 +78,7 @@ const MainBody = () => {
           <span className="text-lg">Instagram</span>
         </a>
 
-        <a href="https://youtube.com/@DevOrbits-u2z" target="_blank" rel="noopener noreferrer"
+        <a href="https://youtube.com/@ZenOrbits-u2z" target="_blank" rel="noopener noreferrer"
            className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
                       bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                       hover:bg-red-600 hover:text-white transition-all duration-300 shadow-lg">
