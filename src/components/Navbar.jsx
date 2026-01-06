@@ -67,7 +67,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] border-t border-gray-700 flex flex-col items-center gap-6 py-28 text-gray-300 font-medium h-full justify-center">
+                <div className="md:hidden bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] border-t-1 border-white border-b-1 flex flex-col items-center gap-6 py-28 text-gray-300 font-medium h-full justify-center">
                     <Link to ='/' onClick={() => setMenuOpen(false)} className="hover:text-gray-100">Home</Link>
                     <Link to ='/about' onClick={() => setMenuOpen(false)} className="hover:text-gray-100">About</Link>
                     <Link to = '/services' onClick={() => setMenuOpen(false)} className="hover:text-gray-100">Services</Link>
