@@ -90,7 +90,7 @@ const Stairs = ({ children }) => {
       {/* Pointer (hidden until transition ends) */}
       <div
         ref={pointerRef}
-        className="pointer fixed h-6 w-6 rounded-full bg-white z-50 pointer-events-none"
+        className="pointer fixed h-6 w-6 rounded-full bg-white z-50 pointer-events-none lg:flex hidden"
         style={{ transform: "translate(0px, 0px)" }}
       ></div>
 
