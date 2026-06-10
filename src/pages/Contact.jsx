@@ -16,6 +16,12 @@ const Contact = () => {
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 
+        <a href="https://wa.me/918657850019?text=Hi%20Sanchit%2C%20I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20business" target="_blank" rel="noopener noreferrer" className="group border border-gray-700 rounded-2xl p-8 bg-gradient-to-br from-[#0f172a]/80 via-[#1e293b]/70 to-[#0f172a]/80 backdrop-blur-md shadow-md transition-all duration-500 hover:shadow-[0_0_35px_rgba(37,211,102,0.7)] hover:border-[#25D366] hover:scale-[1.02] flex flex-col items-center text-center">
+          <FaWhatsapp size={36} className="text-[#25D366] mb-4 group-hover:text-green-400 transition-colors" />
+          <h3 className="text-lg font-semibold text-white">WhatsApp</h3>
+          <p className="text-gray-400 text-sm mt-2">Chat with me directly on WhatsApp.</p>
+        </a>
+
         <a href="https://www.instagram.com/zen_orbits" target="_blank" rel="noopener noreferrer" className={cardClass}>
           <FaInstagram size={36} className="text-pink-500 mb-4 group-hover:text-pink-400 transition-colors" />
           <h3 className="text-lg font-semibold text-white">Instagram DM</h3>
@@ -34,11 +40,7 @@ const Contact = () => {
           <p className="text-gray-400 text-sm mt-2">Connect with me professionally.</p>
         </a>
 
-        <a href="https://wa.me/918657850019?text=Hi%20Sanchit%2C%20I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20business" target="_blank" rel="noopener noreferrer" className="group border border-gray-700 rounded-2xl p-8 bg-gradient-to-br from-[#0f172a]/80 via-[#1e293b]/70 to-[#0f172a]/80 backdrop-blur-md shadow-md transition-all duration-500 hover:shadow-[0_0_35px_rgba(37,211,102,0.7)] hover:border-[#25D366] hover:scale-[1.02] flex flex-col items-center text-center">
-          <FaWhatsapp size={36} className="text-[#25D366] mb-4 group-hover:text-green-400 transition-colors" />
-          <h3 className="text-lg font-semibold text-white">WhatsApp</h3>
-          <p className="text-gray-400 text-sm mt-2">Chat with me directly on WhatsApp.</p>
-        </a>
+
 
       </div>
 

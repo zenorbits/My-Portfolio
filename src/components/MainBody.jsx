@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaStar, FaGithub, FaInstagram, FaYoutube, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const MainBody = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] px-6 md:px-16 flex flex-col">
-      
+
       {/* Top Section: Left + Right side */}
       <div className="flex flex-col md:flex-row">
-        
+
         {/* Left Side: Text */}
         <div className="main-cont-body max-w-3xl w-full md:w-1/2 flex flex-col gap-8 pt-24 md:pt-32">
           <div className="dev inline-flex items-center gap-3 px-5 py-2 
@@ -26,6 +27,14 @@ const MainBody = () => {
           <p className="text-gray-400 text-base md:text-lg max-w-2xl">
             I build immersive, scalable, and future‑proof web applications using React, Tailwind, and other modern technologies — blending technical precision with cinematic polish.
           </p>
+
+          {/* CTA Button */}
+          <Link
+            to="/contact"
+            className="w-fit px-20 py-4 rounded-xl bg-indigo-500 text-white font-bold text-lg hover:bg-indigo-600 transition-all duration-300 shadow-lg hover:scale-105"
+          >
+            🚀 Make Your Website
+          </Link>
         </div>
 
         {/* Right Side: Animated Orbit Element */}
@@ -61,9 +70,18 @@ const MainBody = () => {
       </div>
 
       {/* Bottom Section: Social Media Buttons */}
-      <div className="socialmedia mt-32 flex flex-col md:flex-row justify-between gap-6 w-full items-center">
+      <div className="socialmedia mt-10 flex flex-col md:flex-row justify-between gap-6 w-full items-center">
+
+        <a href="https://wa.me/918657850019?text=Hi%20Sanchit%2C%20I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20business"
+          target="_blank" rel="noopener noreferrer"
+          className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
+                      bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
+                      hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-lg">
+          <FaWhatsapp size={28} />
+          <span className="text-lg">WhatsApp</span>
+        </a>
         <a href="https://github.com/zenorbits" target="_blank" rel="noopener noreferrer"
-           className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
+          className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
                       bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                       hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-lg">
           <FaGithub size={28} />
@@ -71,7 +89,7 @@ const MainBody = () => {
         </a>
 
         <a href="https://www.instagram.com/zen_orbits/" target="_blank" rel="noopener noreferrer"
-           className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
+          className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
                       bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                       hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-lg">
           <FaInstagram size={28} />
@@ -79,7 +97,7 @@ const MainBody = () => {
         </a>
 
         <a href="https://youtube.com/@ZenOrbits-u2z" target="_blank" rel="noopener noreferrer"
-           className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
+          className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
                       bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                       hover:bg-red-600 hover:text-white transition-all duration-300 shadow-lg">
           <FaYoutube size={28} />
@@ -87,21 +105,14 @@ const MainBody = () => {
         </a>
 
         <a href="https://www.linkedin.com/in/sanchit-pathak-5a19b13a2/" target="_blank" rel="noopener noreferrer"
-           className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
+          className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
                       bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
                       hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg">
           <FaLinkedin size={28} />
           <span className="text-lg">LinkedIn</span>
         </a>
 
-        <a href="https://wa.me/918657850019?text=Hi%20Sanchit%2C%20I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20business"
-           target="_blank" rel="noopener noreferrer"
-           className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
-                      bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
-                      hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-lg">
-          <FaWhatsapp size={28} />
-          <span className="text-lg">WhatsApp</span>
-        </a>
+
       </div>
     </div>
   )
