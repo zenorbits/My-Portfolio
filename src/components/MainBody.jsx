@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaStar, FaGithub, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaStar, FaGithub, FaInstagram, FaYoutube, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const MainBody = () => {
   return (
@@ -92,6 +92,15 @@ const MainBody = () => {
                       hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg">
           <FaLinkedin size={28} />
           <span className="text-lg">LinkedIn</span>
+        </a>
+
+        <a href="https://wa.me/918657850019?text=Hi%20Sanchit%2C%20I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20business"
+           target="_blank" rel="noopener noreferrer"
+           className="flex items-center justify-between w-64 px-6 py-4 rounded-xl 
+                      bg-white/10 backdrop-blur-md text-gray-200 font-semibold 
+                      hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-lg">
+          <FaWhatsapp size={28} />
+          <span className="text-lg">WhatsApp</span>
         </a>
       </div>
     </div>
